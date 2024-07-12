@@ -5,4 +5,9 @@ class Key extends Item {
       : super(quantity: 1, name: name);
 
   final String doorToUnlock;
+
+  @override
+  String toString() {
+    return "${this.name}\nFor: ${this.doorToUnlock}";
+  }
 }

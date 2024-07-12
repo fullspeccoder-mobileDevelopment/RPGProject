@@ -17,4 +17,9 @@ class Weapon extends Item {
   void _loseDurability() {
     this.durability -= 5;
   }
+
+  @override
+  String toString() {
+    return "${this.name}\nQuantity: ${this.quantity}\nDurability: ${this.durability}\nAttack: ${this.attackStat}";
+  }
 }

@@ -1,21 +1,19 @@
-import 'characters/hero.dart';
-import 'characters/villager.dart';
+import 'items/item.dart';
+import 'items/potion.dart';
+import 'items/weapon.dart';
+import 'quests/quest.dart';
 
 void main() {
-  Hero hero = Hero("Jacob");
-  Villager villager1 = Villager("Marcus");
+  List<Item> items = [
+    Weapon(2, "Excaliber", attackStat: 2, durability: 100),
+    Potion(2, "Healing Potion")
+  ];
 
-  hero.talkTo(villager1);
-  print("\nHero:");
-  print("Name: ${hero.name}");
-  print("Health: ${hero.health}");
-  print("Mana: ${hero.mana}");
-  print("Equipped Weapon: ${hero.equippedWeapon ?? "No weapon equipped."}");
+  Quest quest1 = Quest(
+      name: "Kill the dragon",
+      description: "Quest to go to a dungeon and sever the dragon's head");
 
-  print("\nVillager:");
-  print("Name: ${villager1.name}");
-  print("Health: ${villager1.health}");
-  print("Mana: ${villager1.mana}");
-  print(
-      "Equipped Weapon: ${villager1.equippedWeapon ?? "No weapon equipped."}");
+  items.forEach((item) => quest1.rewards.add(item));
+
+  print(quest1.toString());
 }

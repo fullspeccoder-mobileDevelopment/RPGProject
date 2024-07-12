@@ -6,4 +6,9 @@ class Potion extends Item {
 
   final int? healthStat;
   final int? manaStat;
+
+  @override
+  String toString() {
+    return "${this.name}\nQuantity: ${this.quantity}\nHealth: ${healthStat}\nMana: ${manaStat}";
+  }
 }

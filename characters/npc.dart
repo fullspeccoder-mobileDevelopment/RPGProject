@@ -77,14 +77,6 @@ abstract class NPC {
     }
   }
 
-  String? giveQuest(int choice) {
-    if (this.quests.length == 0) {
-      return null;
-    } else {
-      return this.quests[choice - 1];
-    }
-  }
-
   void showQuests() {
     if (this.quests.length == 0) {
       print("I have no quests...");

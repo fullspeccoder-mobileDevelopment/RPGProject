@@ -25,6 +25,17 @@ class Hero extends NPC {
     print('talking to ${npc.name}...');
   }
 
+  void addItem(Item item) {
+    if (this.inventory.contains(item)) {
+      this
+          .inventory
+          .firstWhere((itemEl) => itemEl.name == item.name)
+          .quantity += item.quantity;
+    } else {
+      this.inventory.add(item);
+    }
+  }
+
   void useItem(Item item) {
     print('Using ${item.name}...');
   }
@@ -39,5 +50,10 @@ class Hero extends NPC {
     } else {
       print("Can't recieve quest; Doesn't exist");
     }
+  }
+
+  @override
+  String toString() {
+    return "${this.name}\nHealth: ${this.health}\nMana: ${this.mana}\nAttack: ${this.attackStat}\nDefense: ${this.defenseStat}\nMagic: ${this.magicStat}\nEquipped Weapon: ${this.equippedWeapon ?? "None"}";
   }
 }

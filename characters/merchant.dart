@@ -9,4 +9,11 @@ class Merchant extends NPC {
   void giveService(String serviceName) {
     print("Giving ${serviceName}");
   }
+
+  @override
+  String toString() {
+    String stringedInfo = "${this.name}\Services: ";
+    this.services.forEach((line) => stringedInfo += "\n$line");
+    return stringedInfo;
+  }
 }
