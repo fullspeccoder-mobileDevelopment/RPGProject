@@ -1,7 +1,3 @@
-Sure! Here's a description for your text-based RPG game that you can use on GitHub:
-
----
-
 # Medieval Fantasy Adventure RPG
 
 Welcome to **Medieval Fantasy Adventure RPG**, a text-based role-playing game built with Dart! Immerse yourself in a captivating medieval world filled with intriguing characters, perilous quests, and epic battles.
