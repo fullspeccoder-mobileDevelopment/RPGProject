@@ -39,7 +39,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 Embark on your heroic journey today and become the savior of the medieval realm!
-
----
-
-Feel free to adjust the description to better fit your vision and the current state of your project.
