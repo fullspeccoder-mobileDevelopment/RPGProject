@@ -6,9 +6,4 @@ class Potion extends Item {
 
   final int? healthStat;
   final int? manaStat;
-
-  @override
-  void use() {
-    print("Using Potion ${this.name}");
-  }
 }

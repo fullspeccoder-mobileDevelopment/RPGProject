@@ -3,6 +3,4 @@ abstract class Item {
 
   int quantity;
   final String name;
-
-  void use();
 }

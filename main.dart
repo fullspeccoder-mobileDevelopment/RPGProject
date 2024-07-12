@@ -1,19 +1,21 @@
-import './items/weapon.dart';
-import './items/armor.dart';
-import 'items/item.dart';
-import 'items/key.dart';
-import 'items/potion.dart';
+import 'characters/hero.dart';
+import 'characters/villager.dart';
 
 void main() {
-  Weapon weapon1 = Weapon(1, "Excaliber", attackStat: 5, durability: 100);
+  Hero hero = Hero("Jacob");
+  Villager villager1 = Villager("Marcus");
 
-  Armor armor1 = Armor(1, "Dragonborn", defenseStat: 10, durability: 100);
+  hero.talkTo(villager1);
+  print("\nHero:");
+  print("Name: ${hero.name}");
+  print("Health: ${hero.health}");
+  print("Mana: ${hero.mana}");
+  print("Equipped Weapon: ${hero.equippedWeapon ?? "No weapon equipped."}");
 
-  Potion potion1 = Potion(1, "Healing Elixir", healthStat: 15);
-
-  Key key1 = Key("Key of Righteousness", doorToUnlock: "Forest");
-
-  List<Item> inventory = [weapon1, armor1, potion1, key1];
-
-  inventory.forEach((el) => el.use());
+  print("\nVillager:");
+  print("Name: ${villager1.name}");
+  print("Health: ${villager1.health}");
+  print("Mana: ${villager1.mana}");
+  print(
+      "Equipped Weapon: ${villager1.equippedWeapon ?? "No weapon equipped."}");
 }

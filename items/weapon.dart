@@ -8,15 +8,6 @@ class Weapon extends Item {
   int durability;
   int attackStat;
 
-  @override
-  void use() {
-    print("Using Weapon: ${this.name}");
-    this._loseDurability();
-    if (this.durability <= 0) {
-      attackStat = 1;
-    }
-  }
-
   void repair(bool canBeRepaired) {
     if (canBeRepaired) {
       this.durability = 100;

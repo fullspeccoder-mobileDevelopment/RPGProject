@@ -8,15 +8,6 @@ class Armor extends Item {
   int defenseStat;
   int durability;
 
-  @override
-  void use() {
-    print("Using Armor: ${this.name}");
-    this._loseDurability();
-    if (this.durability <= 0) {
-      defenseStat = 0;
-    }
-  }
-
   void repair(bool canBeRepaired) {
     if (canBeRepaired) {
       this.durability = 100;

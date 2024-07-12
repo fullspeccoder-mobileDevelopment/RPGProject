@@ -5,9 +5,4 @@ class Key extends Item {
       : super(quantity: 1, name: name);
 
   final String doorToUnlock;
-
-  @override
-  void use() {
-    print("Using Key: ${this.name}");
-  }
 }
