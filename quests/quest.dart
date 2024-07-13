@@ -1,7 +1,7 @@
 import '../characters/hero.dart';
 import '../items/item.dart';
 
-class Quest {
+abstract class Quest {
   Quest({required this.name, required this.description});
   final String name;
   final String description;
@@ -11,6 +11,10 @@ class Quest {
     if (rewards.length != 0) {
       this.rewards.forEach((reward) => hero.inventory.add(reward));
     }
+  }
+
+  void completeQuest() {
+    print("Completing Quest...");
   }
 
   @override

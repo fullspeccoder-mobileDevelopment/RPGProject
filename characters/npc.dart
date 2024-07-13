@@ -1,6 +1,7 @@
 import '../items/armor.dart';
 import '../items/item.dart';
 import '../items/weapon.dart';
+import '../quests/quest.dart';
 
 abstract class NPC {
   NPC(
@@ -24,7 +25,7 @@ abstract class NPC {
   final String _name;
   final List<Item> _inventory = [];
   final Map<String, Armor> _equippedArmor = {};
-  final List<String> _quests = [];
+  final List<Quest> _quests = [];
 
   String get name => this._name;
   int get health => this._health;
@@ -35,7 +36,7 @@ abstract class NPC {
   Weapon? get equippedWeapon => this._equippedWeapon;
   List<Item> get inventory => this._inventory;
   Map<String, Armor> get equippedArmor => this._equippedArmor;
-  List<String> get quests => this._quests;
+  List<Quest> get quests => this._quests;
 
   void set health(int amount) => this._health + amount;
   void set mana(int amount) => this._mana + amount;
@@ -82,7 +83,10 @@ abstract class NPC {
       print("I have no quests...");
     } else {
       print("\nQuests:");
-      this.quests.forEach((quest) => print(quest));
+      int count = 1;
+      this.quests.forEach((quest) {
+        print("${count++}: ${quest.name}");
+      });
     }
   }
 }

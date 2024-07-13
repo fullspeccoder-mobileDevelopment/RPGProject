@@ -1,3 +1,4 @@
+import '../quests/quest.dart';
 import 'npc.dart';
 
 class Villager extends NPC {
@@ -10,8 +11,8 @@ class Villager extends NPC {
     print("Giving Dialogue...");
   }
 
-  String? giveQuest(int choice) {
-    if (this.quests.length == 0) {
+  Quest? giveQuest(int choice) {
+    if (this.quests.length == 0 || choice > this.quests.length || choice <= 0) {
       return null;
     } else {
       return this.quests[choice - 1];

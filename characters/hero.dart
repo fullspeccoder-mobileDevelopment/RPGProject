@@ -1,4 +1,5 @@
 import '../items/item.dart';
+import '../quests/quest.dart';
 import 'npc.dart';
 
 class Hero extends NPC {
@@ -44,7 +45,7 @@ class Hero extends NPC {
     print('Discarding ${item.name}...');
   }
 
-  void recieveQuest(String? quest) {
+  void recieveQuest(Quest? quest) {
     if (quest != null) {
       this.quests.add(quest);
     } else {
