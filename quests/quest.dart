@@ -7,11 +7,12 @@ abstract class Quest {
   final String description;
   final List<Item> rewards = [];
 
-  void giveRewards(Hero hero) {
-    if (rewards.length != 0) {
-      this.rewards.forEach((reward) => hero.inventory.add(reward));
-    }
-  }
+  // TODO: Implement this for the hero's inventory
+  // void giveRewards(Hero hero) {
+  //   if (rewards.length != 0) {
+  //     this.rewards.forEach((reward) => hero.inventory.add(reward));
+  //   }
+  // }
 
   void completeQuest() {
     print("Completing Quest...");

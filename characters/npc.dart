@@ -1,5 +1,4 @@
 import '../items/armor.dart';
-import '../items/item.dart';
 import '../items/weapon.dart';
 import '../quests/quest.dart';
 
@@ -23,7 +22,6 @@ abstract class NPC {
   int _magicStat;
   Weapon? _equippedWeapon;
   final String _name;
-  final List<Item> _inventory = [];
   final Map<String, Armor> _equippedArmor = {};
   final List<Quest> _quests = [];
 
@@ -34,7 +32,6 @@ abstract class NPC {
   int get defenseStat => this._defenseStat;
   int get magicStat => this._magicStat;
   Weapon? get equippedWeapon => this._equippedWeapon;
-  List<Item> get inventory => this._inventory;
   Map<String, Armor> get equippedArmor => this._equippedArmor;
   List<Quest> get quests => this._quests;
 
@@ -51,33 +48,35 @@ abstract class NPC {
     }
   }
 
-  Item? giveItem(String itemName) {
-    for (final item in this.inventory) {
-      if (item.name == itemName) {
-        item.quantity -= 1;
-        return item;
-      }
-    }
-    return null;
-  }
+  // TODO: Use these written out methods in the "Inventory" class
+  // Item? giveItem(String itemName) {
+  //   for (final item in this.inventory) {
+  //     if (item.name == itemName) {
+  //       item.quantity -= 1;
+  //       return item;
+  //     }
+  //   }
+  //   return null;
+  // }
 
-  void recieveItem(Item? item) {
-    if (item == null) {
-      print("Couldn't recieve item");
-    } else {
-      print("Recieving ${item.name}");
-      this.inventory.add(item);
-    }
-  }
+  // void recieveItem(Item? item) {
+  //   if (item == null) {
+  //     print("Couldn't recieve item");
+  //   } else {
+  //     print("Recieving ${item.name}");
+  //     this.inventory.add(item);
+  //   }
+  // }
 
-  void viewInventory() {
-    print("\nInventory:");
-    for (final item in this.inventory) {
-      print("Item: ${item.name}");
-      print("Quantity: ${item.quantity}");
-    }
-  }
+  // void viewInventory() {
+  //   print("\nInventory:");
+  //   for (final item in this.inventory) {
+  //     print("Item: ${item.name}");
+  //     print("Quantity: ${item.quantity}");
+  //   }
+  // }
 
+  // TODO: Implement this for the QuestHandler interface
   void showQuests() {
     if (this.quests.length == 0) {
       print("I have no quests...");
