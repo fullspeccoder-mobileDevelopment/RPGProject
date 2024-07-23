@@ -5,6 +5,7 @@ abstract class Quest {
   Quest({required this.name, required this.description});
   final String name;
   final String description;
+  bool completedStatus = false;
   final List<Item> rewards = [];
 
   // TODO: Implement this for the hero's inventory

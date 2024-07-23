@@ -1,11 +1,13 @@
-import 'lib/characters/hero.dart';
-import 'lib/items/weapon.dart';
+import 'package:my_app/characters/villager.dart';
+import 'package:my_app/locations/location.dart';
+import 'package:my_app/locations/village.dart';
 
 void main() {
-  Hero hero = Hero("Jake");
+  Location location1 = Village(
+      "PuPuNuNu",
+      "A village where a tribe exists...",
+      {"North": Village("NuNuPuPu", "Village of tribes", {}, {})},
+      {"house": Villager("Marcus")});
 
-  hero.inventory
-      .addItem(Weapon(5, "Excaliber", attackStat: 5, durability: 100));
-
-  print(hero.inventory);
+  print(location1);
 }

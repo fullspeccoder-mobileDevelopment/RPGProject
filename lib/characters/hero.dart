@@ -1,16 +1,17 @@
+import 'package:my_app/quests/quest_list.dart';
+
 import '../items/inventory.dart';
-import '../../quests/quest.dart';
-import '../../quests/quest_handler.dart';
 import 'npc.dart';
 
-class Hero extends NPC implements QuestHandler {
+class Hero extends NPC {
   Hero(String name)
-      : _inventory = Inventory(),
-        super(attackStat: 5, defenseStat: 5, magicStat: 5, name: name);
+      : super(attackStat: 5, defenseStat: 5, magicStat: 5, name: name);
 
-  final Inventory _inventory;
+  final Inventory _inventory = Inventory();
+  final QuestList _quests = QuestList();
 
   Inventory get inventory => _inventory;
+  QuestList get quests => _quests;
 
   // TODO: Implement this for the GameMap class
   void travel() {
@@ -40,21 +41,7 @@ class Hero extends NPC implements QuestHandler {
   // void hasItem() {}
 
   @override
-  void recieveQuest(Quest? quest) {
-    if (quest != null) {
-      this.quests.add(quest);
-    } else {
-      print("Can't recieve quest; Doesn't exist");
-    }
-  }
-
-  @override
   String toString() {
-    return "${this.name}\nHealth: ${this.health}\nMana: ${this.mana}\nAttack: ${this.attackStat}\nDefense: ${this.defenseStat}\nMagic: ${this.magicStat}\nEquipped Weapon: ${this.equippedWeapon ?? "None"}";
-  }
-
-  @override
-  void giveQuest() {
-    print("Giving quest...");
+    return "$name\nHealth: $health\nMana: $mana\nAttack: $attackStat\nDefense: $defenseStat\nMagic: $magicStat\nEquipped Weapon: ${equippedWeapon ?? "None"}";
   }
 }
